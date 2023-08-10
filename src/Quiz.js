@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { QuizData } from "./QuizData";
 import QuizR from "./QuizR";
 
-export default function Quiz() {
+export default function Quiz({CardView}) {
+
   const [cQuestion, setCQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [clickO, setClickO] = useState(0);
@@ -57,7 +58,7 @@ export default function Quiz() {
 
   return (
     <div>
-      <p className="heading-txt">Quiz App</p>
+      {/* <p className="heading-txt">Quiz App</p> */}
       <div className="container">
         {showStartPage ? (
           <div>
@@ -65,7 +66,7 @@ export default function Quiz() {
             <button onClick={handleStart} className="start">Start</button>
           </div>
         ) : showR ? (
-          <QuizR score={score} totalScore={QuizData.length} tryAgain={resetAll} />
+          <QuizR score={score} totalScore={QuizData.length} tryAgain={resetAll} CardView={CardView}/>
         ) : (
           <>
             <div className="question">

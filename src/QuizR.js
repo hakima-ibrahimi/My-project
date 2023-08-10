@@ -8,6 +8,7 @@ export default function QuizR(props) {
     Total Score: {props.totalScore}
     </div>
     <button id="next-button" onClick={props.tryAgain}>Try Again</button>
+    <button id="CardView" onClick={props.CardView}>Card</button>
     </>
   )
 }
